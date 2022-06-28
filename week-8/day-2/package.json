@@ -1,0 +1,8 @@
+{
+    "dependencies": {
+        "parcel": ""
+    }, 
+    "scripts": {
+        "start": "parcel index.html"
+    }
+}

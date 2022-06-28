@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/alpinejs@3.10.2/dist/cdn.min.js" defer></script>
+
+    <style>
+        body {
+            font-family: Inter, sans-serif;
+        }
+
+        .button {
+            font-weight: 600;
+            font-size: 16px;
+            font-family: Inter, sans-serif;
+            border: 2px solid black;
+            background-color: transparent;
+            height: 40px;
+            padding-left: 16px;
+            padding-right: 16px;
+            border-radius: 8px;
+        }
+
+        .is-active {
+            background-color: black;
+            color: white;
+        }
+
+        .tag {
+            display: inline-flex;
+            background-color: #D1FAE5;
+            color: #067857;
+            padding-left: 4px;
+            padding-right: 4px;
+            border-radius: 4px;
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <div x-data="{ buttonIsActive: false }">
+        <div>
+            <span class="tag" x-show="buttonIsActive == true">Active</span>
+        </div>
+        <button class="button" x-show="buttonIsActive == false" x-on:click="buttonIsActive = true">Inactive</button>
+        <button class="button is-active" x-show="buttonIsActive == true"
+            x-on:click="buttonIsActive = false">Active</button>
+    </div>
+    <script src="index.js" type="module"></script>
+</body>
+
+</html>
