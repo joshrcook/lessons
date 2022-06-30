@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/feather-icons@4.29.0/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/alpinejs@3.10.2/dist/cdn.min.js" defer></script>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #ddd;
+        }
+
+        .wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .content-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .switcher {
+            width: 300px;
+            height: 40px;
+            display: flex;
+            background-color: #eee;
+            border-radius: 99px;
+            padding: 4px;
+        }
+
+        .sun-icon,
+        .moon-icon {
+            display: flex;
+            flex: 1;
+            align-items: center;
+            justify-content: center;
+            border-radius: 99px;
+        }
+
+        .sun-icon {
+            background-color: white;
+        }
+
+        .notification {
+            max-width: 500px;
+            background-color: white;
+            border-radius: 12px;
+            padding: 16px;
+            margin-top: 20px;
+        }
+
+        .notification-title {
+            margin: 0;
+            font-size: 18px;
+            line-height: 28px;
+            color: #222;
+        }
+
+        .notification-text {
+            color: #222;
+            margin: 0;
+            margin-top: 12px;
+        }
+
+        .dark {
+            background-color: #3D4859;
+        }
+
+        .dark .switcher {
+            background-color: #1C2B42;
+        }
+
+        .dark .sun-icon,
+        .dark .moon-icon {
+            color: white;
+        }
+
+        .dark .sun-icon {
+            background-color: transparent;
+        }
+
+        .dark .moon-icon {
+            background-color: #3D4859;
+        }
+
+        .dark .notification {
+            background-color: #1C2B42;
+        }
+
+        .dark .notification-title,
+        .dark .notification-text {
+            color: white;
+        }
+
+        .notification-title:before {
+            content: '';
+            height: 12px;
+            width: 12px;
+            background-color: blue;
+            display: inline-flex;
+            margin-right: 8px;
+        }
+
+        .dark .notification-title:before {
+            background-color: #37B0FF;
+        }
+    </style>
+
+</head>
+
+<body x-bind:class="darkMode ? 'dark' : ''" x-data="{ darkMode: false }">
+    <div class="wrapper">
+        <div class="content-wrapper">
+            <div class="switcher">
+                <div class="sun-icon" x-on:click="darkMode = false">
+                    <i data-feather="sun"></i>
+                </div>
+                <div class="moon-icon" x-on:click="darkMode = true">
+                    <i data-feather="moon"></i>
+                </div>
+            </div>
+            <div class="notification">
+                <h3 class="notification-title">Funky Notifications</h3>
+                <p class="notification-text">Curabitur blandit tempus porttitor. Vivamus sagittis lacus vel augue
+                    laoreet
+                    rutrum
+                    faucibus dolor auctor.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        feather.replace()
+    </script>
+    <script src="index.js" type="module"></script>
+</body>
+
+</html>
