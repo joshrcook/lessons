@@ -1,0 +1,40 @@
+.container {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    paddding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.modal-background {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+.modal-background.is-active {
+    display: flex;
+}
+
+.modal {
+    background-color: white;
+    width: 400px;
+    padding: 16px;
+    border-radius: 8px;
+}
+
+.absolute-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100px;
+    width: 100px;
+    background-color: red;
+    color: white;
+}
