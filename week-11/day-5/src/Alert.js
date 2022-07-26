@@ -1,9 +1,9 @@
 import React from "react";
-import classNames from 'classnames';
+import classNames from "classnames";
 
 function Alert(props) {
-    const [isShown, setIsShown] = React.useState(true);
     const { title, description, icon, type } = props;
+    const [isShown, setIsShown] = React.useState(true);
 
     function hideAlert() {
         setIsShown(false);
@@ -12,6 +12,7 @@ function Alert(props) {
     return (
         <div className={classNames("alert", {
             'alert-success': type == 'success',
+            'alert-info': type == 'info',
             'alert-warning': type == 'warning',
             'alert-error': type == 'error',
             'alert-hidden': isShown == false
@@ -20,11 +21,11 @@ function Alert(props) {
                 {icon}
             </div>
             <div className="alert-text">
-                <h2 className="alert-title">{title}</h2>
-                <p className="alert-description">{description}</p>
+                <div className="alert-title">{title}</div>
+                <div className="alert-description">{description}</div>
             </div>
             <div className="alert-close" onClick={hideAlert}>
-                <i class="fa-solid fa-xmark"></i>
+                <i className="fa-solid fa-xmark"></i>
             </div>
         </div>
     );

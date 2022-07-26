@@ -7,10 +7,10 @@ function App() {
 
     return (
         <div className="wrapper">
-            <Alert title="Congratulations" description="Your OS has been updated" icon={<i className="fa-solid fa-shield-halved"></i>} type="success" />
-            <Alert title="Did you know?" description="You can do stuff" icon={<i class="fa-solid fa-circle-info"></i>} />
-            <Alert title="Warning" description="Your password strength is low" icon={<i class="fa-solid fa-circle-exclamation"></i>} type="warning" />
-            <Alert title="Something went wrong" description="The program turned off" icon={<i class="fa-solid fa-triangle-exclamation"></i>} type="error" />
+            <Alert title="Account created" description="You have successfully created your account" icon={<i className="fa-solid fa-circle-check"></i>} type="success" />
+            <Alert title="Choose a strong password" description="blah" icon={<i className="fa-solid fa-circle-exclamation"></i>} type="info" />
+            <Alert title="Choose a strong password" description="blah" icon={<i className="fa-solid fa-circle-exclamation"></i>} type="warning" />
+            <Alert title="Choose a strong password" description="blah" icon={<i className="fa-solid fa-circle-exclamation"></i>} type="error" />
         </div>
     );
 }
